@@ -14,26 +14,42 @@ body {
     font-size: 16px;
     color: #444;
     text-align: center;
-    line-height: 1.4rem;
+    line-height: 1.6rem;
     background: rgb(178, 205, 211);
+    scroll-behavior: smooth;
 }
-  
-.block {
-    background: linear-gradient(175deg, rgb(234, 241, 243) 0%, rgba(178, 205, 211,1) 75%);
+
+img {
+    object-fit: contain;
+    align-self: center;
+    max-height: 30vh;
+    max-width: 50vw;
+    border: 3px solid lightblue;
 }
 
 .container {
     margin: 5px auto;
+    height: 100%;
+}
+
+.block-section {
+    min-height: 90vh;
 }
 
 footer {
     padding: 1% 0;
     background-color: #aaa;
+    display: flex;
+    flex-flow: row;
+}
+
+footer > a > i {
+    font-size: 1.5rem;
+    padding: 10px 20px;
 }
 
 
-
-  /* Nav Bar Styling */
+/* Nav Bar Styling */
   
 nav {
     position: fixed;
@@ -41,12 +57,16 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     top: 0;
     left: 0;
-    right: 0;
     z-index: 10;
     background-color: #aaa;
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.night-mode-bar {
+    align-self: center;
 }
 
 ul {
@@ -67,31 +87,149 @@ li:hover {
 a {
     text-decoration: none;
     color: #262626;
+    display: flex;
+    flex-flow: column;
+    transition: color .3s;
 }
 
-  /* Main body Styling */
-  
-h2 {
+div > a:hover {
+    color: rgb(116, 116, 117);
+}
+
+/* Main body Styling */
+
+/* Splash screen styling */
+/* Set each frame side seperately to allow illusion of break through */
+
+ 
+.block {
     position: relative;
+    margin-top: 5vh;
+    background: linear-gradient(175deg, rgb(234, 241, 243) 0%, rgba(178, 205, 211,1) 75%);
+}
+
+.center-screen {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.frame-left {
+    position: absolute;
+    border-radius: 50px;
+    border-top: 10px solid white;
+    border-left: 10px solid white;
+    height: 80vh;
+    width: 85vw;
     z-index: 1;
 }
 
-h2:after {
+.frame-right {
     position: absolute;
+    overflow: hidden;
+    border-radius: 50px;
+    border-bottom: 10px solid white;
+    border-right: 10px solid white;
+    height: 80vh;
+    width: 85vw;
+    z-index: 3;
+}
+
+.frame-center {
+    position: absolute;
+    height: 50vh;
+    width: 70vw;
+    display: flex;
+    flex-flow: column;
+    line-height: 3rem;
+}
+
+h1 {
+    padding: 10vh 0;
+    width: 100%;
+}
+
+h1 + p {
+    text-align: right;
+}
+
+
+/* Header Styling */
+/* This creates our blue triangles for each header.  Changes direction each even one! */
+
+h2 {
+    position: relative;
+    z-index: 1;
+    padding: 5vh 0;
+}
+
+h2::before {
+    position: absolute;
+    display: block;
     content: '';
-    left: 0px;
-    right: 0px;
-    margin-right: 20%;
-    border-width: 20px 45vw;
+    left: 0;
+    border-width: 20px 40vw;
     border-style: solid;
     border-color: rgba(0,0,0,0) rgba(0,0,0,0) rgb(111, 217, 247) rgb(111, 217, 247);
     z-index: -1;
 }
-  
-  header {
+
+section:nth-child(odd) h2::before {
+    left: 19%;
+    right: 0;
+    border-color: rgba(0,0,0,0) rgb(111, 217, 247) rgb(111, 217, 247) rgba(0,0,0,0);
+}
+
+
+header {
     height: 100vh;
     line-height: 100vh;
-  }
+}
+
+/* SVG elements styling */
+/* Create hills and butterflies and fireflies using base svg elements */
+
+#splash-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 84vw;
+    height: 100vh;
+}
+
+.hill {
+    rx: 20vw;
+    ry: 20vh;
+    z-index: 2;
+    stroke: linear-gradient(305deg, rgba(58,98,107,0) 20%, rgba(77,167,97,1) 80%, rgba(218,245,209,1) 100%);
+    --color-light-1: #daf5d1;
+    --color-light-2: #4da761;
+    --color-light-3: #3a626b;
+
+    /* For night mode
+    --color-dark-1:
+    --color-dark-2:
+    --color-dark-3:
+    */
+
+    fill: url(#hill-day-gradient);
+}
+
+#hill-one {
+    cx: 20vw; 
+    cy: 90vh;
+}
+
+#hill-two {
+    cx: 45vw; 
+    cy: 90vh;
+}
+
+#hill-three {
+    cx: 70vw; 
+    cy: 90vh;
+}
   
 /* Project Box Styling */
 
@@ -99,7 +237,7 @@ h2:after {
     display: flex;
     flex-flow: column;
     align-items: center;
-    margin: 10px 20%;
+    margin: 10px 10vw;
 }
 
 .project-list > .divider {
@@ -111,13 +249,12 @@ h3 {
 }
 
 section {
-    padding: 20px;
     background-color: #bbb;
 }
 
 p {
-    padding: 10px 20%;
     text-align: left;
+    padding: 20px 5vw;
 }
 
 .links {
@@ -126,6 +263,19 @@ p {
     align-items: center;
     justify-content: space-around;
 }
+
+/* Icon Styling */
+
+i {
+    display: block;
+    font-size: 2rem;
+    padding: 5px;
+}
+
+i + span {
+    visibility: hidden;
+}
+
 
   /* Media queries */
   /* Tablet - PC */
@@ -136,6 +286,12 @@ p {
     body {
         font-size: 20px;
         line-height: 2rem;
+    }   
+
+    img {
+        max-height: none;
+        max-width: 15vw;
+        margin: 0 20px;
     }
 
     .project-list {
@@ -152,6 +308,11 @@ p {
     .container {
         margin: 20px auto;
     }
+
+    i + span {
+        visibility: visible;
+    }
+    
   }
 
   @media screen and (min-width: 1024px) {
@@ -159,5 +320,14 @@ p {
     body {
         font-size: 24px;
         line-height: 2.6rem;
+    }
+
+    i {
+        font-size: 3rem;
+    }
+
+    footer > a > i {
+        font-size: 2rem;
+        margin: 0 10px;
     }
   }

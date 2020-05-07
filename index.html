@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>HTML wireframe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css">
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
+
 <body>
-    <nav role="navigation">Nav
+    <nav role="navigation">
+        <div class="night-mode-bar"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
         <ul>
             <li><a href="#bio-box">About</a></li>
             <li><a href="#project-box">Projects</a></li>
@@ -15,72 +18,104 @@
         </ul>
     </nav>
     <main role="main">
-        <header role="banner" class="block">
-            <h1>Hero</h1>
+        <header role="banner" class="block block-section">
+            <svg id="splash-screen">
+
+                <defs>
+                    <linearGradient id="hill-day-gradient" x1="0%" y1="0%" x2="15%" y2="100%">
+                        <stop offset="0%" style="stop-color:#daf5d1;stop-opacity:1" />
+                        <stop offset="40%" style="stop-color:#4da761;stop-opacity:.9" />
+                        <stop offset="70%" style="stop-color:#f8f8f8;stop-opacity:0" />
+                    </linearGradient>
+                </defs>
+            
+                <ellipse class="hill" id="hill-one" fill="url(#hill-day-gradient)" />
+                <ellipse class="hill" id="hill-two" />
+                <ellipse class="hill" id="hill-three" />
+            </svg>
+
+            <div class="frame-left center-screen"></div>
+            <div class="frame-center center-screen">
+                <h1>Thomas Davis</h1>
+                <p>Bringing creative ideas to life.</p>
+            </div>
+            <div class="frame-right center-screen"></div>
         </header>
 
-        <div class="container" id="bio-box">
+        <section class="container block-section" id="bio-box">
             <h2>About Me</h2>
-            <section>
-                <p>Hey everyone, I'm a developer with a talent for persistence and a desire to make joy in people's lives.  I have a passion for video games and enjoy analyzing the systems within them to discover what makes them so enjoyable.  Bringing people together and making them smile is what I do best, and I rarely stop trying to achieve that goal.</p>
-                
-                <p>I work on making small games when I am not investing time into playing them, and I draw and model on the side as a quiet hobby.  Having an artistic side of me helps me design frontends that delight others.</p>
+            <p>Hey everyone, I'm a developer with a talent for persistence and a desire to make joy in people's lives. I
+                have a passion for video games and enjoy analyzing the systems within them to discover what makes them
+                so enjoyable. Bringing people together and making them smile is what I do best, and I rarely stop trying
+                to achieve that goal.</p>
 
-                <p>I am also pretty good at fighting games.  I enjoy the competition, and I've attended a tournament once. I intend to commit more time in the future to one day attend Evo.</p>
-            </section>
-        </div>
-        
-        <div class="shape"></div>
+            <p>I work on making small games when I am not investing time into playing them, and I draw and model on the
+                side as a quiet hobby. Having an artistic side of me helps me design frontends that delight others.</p>
 
-        <div class="container" id="project-box">
+            <p>I am also pretty good at fighting games. I enjoy the competition, and I've attended a tournament once. I
+                intend to commit more time in the future to one day attend Evo.</p>
+        </section>
+
+        <section class="container block-section" id="project-box">
             <h2>Projects</h2>
-            <section>
-                <p>Here are a list of projects I have created that display my skill set.</p>
-            </section>
+            <p>Here are a list of projects I have created that display my skill set.</p>
             <div class="project-list">
                 <div class="container">
-                    <h3>Project 1</h3>
-                    <img class="project-img" src="">
+                    <img class="project-img" src="./kobold-cave-portfolio.png">
+                    <h3>Kobold Cave</h3>
                 </div>
                 <div class="container divider">
-                    <section>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptate rem incidunt, similique repellat voluptatibus. Odio debitis atque totam voluptatem officia, cupiditate, adipisci sapiente magni iusto, quas officiis porro sit.
-                    </section>
+                    <p>Wake the dragon! This is a small incremental styled game I made before joining the Thinkful
+                        bootcamp, using nothing but vanilla JS/HTML/CSS. What started off as simply pushing a botton
+                        blossomed into rudimentary AI for the kobolds that you manage as they do their day to day
+                        task of gathering more coins for the sleeping beast. I learned how to handle many objects
+                        and fundamental logic, and I continue to update this program when I have time keeping to the
+                        mantra of pure.</p>
                     <div class="container links">
-                        <a href="_blank">Live Link</a>
-                        <a href="_blank">Github</a>
+                        <a href="https://thomasdavisa.github.io/kobold-game/"><i class="fas fa-link"></i>Live Link</a>
+                        <a href="https://github.com/ThomasDavisA/kobold-game"><i class="fab fa-github"></i>Github</a>
                     </div>
                 </div>
             </div>
 
             <div class="project-list">
                 <div class="container">
-                    <h3>Project 2</h3>
-                    <img class="project-img" src="">
+                    <img class="project-img" src="./lilac-portfolio.png">
+                    <h3>lilac</h3>
                 </div>
                 <div class="container divider">
-                    <section>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptate rem incidunt, similique repellat voluptatibus. Odio debitis atque totam voluptatem officia, cupiditate, adipisci sapiente magni iusto, quas officiis porro sit.
-                    </section>
+
+                    <p>A bookmark app created using an API, lilac is a pastel program meant to make it easy to
+                        handle your bookmarks. With pleasing colors and a gentle palette, browsing your saved
+                        bookmarks has never been more relaxing. Working on this project taught me a lot about
+                        handling API calls, and gave me great insight into how to handle state management, giving me
+                        plenty of experience for future projects.</p>
+
                     <div class="container links">
-                        <a href="_blank">Live Link</a>
-                        <a href="_blank">Github</a>
+                        <a href="https://thinkful-ei-orka.github.io/thomas-bookmarks-app/"><i
+                                class="fas fa-link"></i>Live Link</a>
+                        <a href="https://github.com/thinkful-ei-orka/thomas-bookmarks-app"><i
+                                class="fab fa-github"></i>Github</a>
                     </div>
                 </div>
             </div>
 
             <div class="project-list">
                 <div class="container">
-                    <h3>Project 3</h3>
-                    <img class="project-img" src="">
+                    <img class="project-img" src="./stardew-valley-quiz-portfolio.png">
+                    <h3>Stardew Valley Quiz!</h3>
                 </div>
                 <div class="container divider">
-                    <section>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptate rem incidunt, similique repellat voluptatibus. Odio debitis atque totam voluptatem officia, cupiditate, adipisci sapiente magni iusto, quas officiis porro sit.
-                    </section>
+
+                    <p>Do you know your Stardew Valley? Try this simple 5 question quiz developed by myself and
+                        Victor, a classmate during my time at Thinkful. We learned not only fundamentals of JS, but
+                        also handled jQuery and basic logic.</p>
+
                     <div class="container links">
-                        <a href="_blank">Live Link</a>
-                        <a href="_blank">Github</a>
+                        <a href="https://thinkful-ei-orka.github.io/Quiz-App-Thomas/"><i class="fas fa-link"></i>Live
+                            Link</a>
+                        <a href="https://github.com/thinkful-ei-orka/Quiz-App-Thomas"><i
+                                class="fab fa-github"></i>Github</a>
                     </div>
                 </div>
             </div>
@@ -92,31 +127,36 @@
                 </div>
                 <div class="container divider">
                     <section>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptate rem incidunt, similique repellat voluptatibus. Odio debitis atque totam voluptatem officia, cupiditate, adipisci sapiente magni iusto, quas officiis porro sit.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptate rem incidunt, similique
+                        repellat voluptatibus. Odio debitis atque totam voluptatem officia, cupiditate, adipisci
+                        sapiente magni iusto, quas officiis porro sit.
                     </section>
                     <div class="container links">
-                        <a href="_blank">Live Link</a>
-                        <a href="_blank">Github</a>
+                        <a href="_blank"><i class="fas fa-link"></i>Live Link</a>
+                        <a href="_blank"><i class="fab fa-github"></i>Github</a>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="container" id="contact-box">
+        </section>
+
+        <section class="container block-section" id="contact-box">
             <h2>Contact</h2>
-            <section>
-                <p>You can contact me reaching any of these methods:</p>
-                <div class="container links">
-                    <a href="_blank">Link</a>
-                    <a href="_blank">Link</a>
-                    <a href="_blank">Link</a>
-                    <a href="_blank">Link</a>
-                    <a href="_blank">Link</a>
-                </div>
-            </section>
-        </div>
-        
+            <p>You can contact me reaching any of these methods:</p>
+            <div class="container links">
+                <a href="https://github.com/ThomasDavisA"><i class="fab fa-github"></i><span>Github</span></a>
+                <a href="https://www.linkedin.com/in/thomas-davis-b5b8b2101/"><i
+                        class="fab fa-linkedin"></i><span>Linkedin</span></a>
+                <a href="mailto:thomasdavisa@gmail.com?subject=Portfolio%20Response"><i
+                        class="fas fa-envelope"></i><span>E-mail</span></a>
+            </div>
+        </section>
+
     </main>
-    <footer role="content-info">Footer</footer>
+    <footer role="content-info">
+        <a href="https://github.com/ThomasDavisA"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/thomas-davis-b5b8b2101/"><i class="fab fa-linkedin"></i></a>
+    </footer>
+    <script src="https://kit.fontawesome.com/dc8d284b34.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
