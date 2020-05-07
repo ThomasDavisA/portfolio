@@ -5,18 +5,25 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --day-color-background: rgb(178, 205, 211);
+    --night-color-background: rgb(32, 21, 37);
+}
+
+html {
+    scroll-behavior: smooth;
+}
   
 /* Base and Generic Elements */
 
 body {
-    font-family: "Open Sans",
-    sans-serif; 
+    font-family: "Oxygen", sans-serif; 
     font-size: 16px;
     color: #444;
     text-align: center;
     line-height: 1.6rem;
     background: rgb(178, 205, 211);
-    scroll-behavior: smooth;
 }
 
 img {
@@ -75,6 +82,7 @@ ul {
 }
 
 li {
+    font-family: 'Martel Sans', sans-serif;
     list-style: none;
     padding: 10px 20px;
     transition: background-color .5s;
@@ -145,6 +153,8 @@ div > a:hover {
 }
 
 h1 {
+    font-family: 'Martel Sans', sans-serif;
+    font-weight: 600;
     padding: 10vh 0;
     width: 100%;
 }
@@ -158,9 +168,11 @@ h1 + p {
 /* This creates our blue triangles for each header.  Changes direction each even one! */
 
 h2 {
+    font-family: 'Martel Sans', sans-serif;
     position: relative;
     z-index: 1;
     padding: 5vh 0;
+    padding-top: 20vh;
 }
 
 h2::before {
@@ -199,8 +211,8 @@ header {
 }
 
 .hill {
-    rx: 20vw;
-    ry: 20vh;
+    rx: 25vw;
+    ry: 15vh;
     z-index: 2;
     stroke: linear-gradient(305deg, rgba(58,98,107,0) 20%, rgba(77,167,97,1) 80%, rgba(218,245,209,1) 100%);
     --color-light-1: #daf5d1;
@@ -217,17 +229,18 @@ header {
 }
 
 #hill-one {
-    cx: 20vw; 
+    cx: 25vw; 
     cy: 90vh;
 }
 
 #hill-two {
+    visibility: hidden;
     cx: 45vw; 
     cy: 90vh;
 }
 
 #hill-three {
-    cx: 70vw; 
+    cx: 65vw; 
     cy: 90vh;
 }
   
@@ -237,7 +250,10 @@ header {
     display: flex;
     flex-flow: column;
     align-items: center;
+    padding: 0 1vw;
     margin: 10px 10vw;
+    background-color: rgb(206, 227, 241);
+    border-radius: 2px;
 }
 
 .project-list > .divider {
@@ -245,16 +261,14 @@ header {
 }
 
 h3 {
+    font-family: 'Martel Sans', sans-serif;
     margin: 0 20px;
-}
-
-section {
-    background-color: #bbb;
 }
 
 p {
     text-align: left;
     padding: 20px 5vw;
+    font-weight: 300;
 }
 
 .links {
@@ -281,12 +295,16 @@ i + span {
   /* Tablet - PC */
 
 
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
 
     body {
         font-size: 20px;
         line-height: 2rem;
-    }   
+    }
+    
+    h2 {
+        padding-top: 15vh;
+    }
 
     img {
         max-height: none;
@@ -312,10 +330,31 @@ i + span {
     i + span {
         visibility: visible;
     }
+
+    .hill {
+        rx: 20vw;
+        ry: 17vh;
+    }
     
+    #hill-one {
+        cx: 20vw; 
+        cy: 90vh;
+    }
+    
+    #hill-two {
+        visibility: visible;
+        cx: 45vw; 
+        cy: 90vh;
+    }
+    
+    #hill-three {
+        cx: 70vw; 
+        cy: 90vh;
+    }
+
   }
 
-  @media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
 
     body {
         font-size: 24px;
@@ -330,4 +369,22 @@ i + span {
         font-size: 2rem;
         margin: 0 10px;
     }
-  }
+
+    .hill {
+        rx: 20vw;
+        ry: 20vh;
+    }
+}
+
+/* Night Mode */
+/* Change a multitude of colors to dark shades */
+
+@media screen and (prefers-color-scheme: dark) {
+    
+}
+
+@media screen and (prefers-color-scheme: light) {
+    .dark-mode {
+        display: none;
+    }
+}
