@@ -53,6 +53,11 @@ p {
     padding: 20px 5vw;
 }
 
+section > h3 {
+    margin-left: 10vw;
+    
+}
+
 span {
     font-size: .75rem;
     margin: 0 auto;
@@ -211,7 +216,7 @@ section:nth-child(odd) h2::before {
 #bio-box > ul {
     display: flex;
     flex-flow: column;
-    margin: 5vh 5vw;
+    margin: 0 5vw;
 }
 
 #bio-box ul li {
@@ -240,7 +245,7 @@ section:nth-child(odd) h2::before {
 }
 
 .hill {
-    rx: 40vw;
+    rx: 30vw;
     ry: 10vh;
     z-index: 2;
 
@@ -254,12 +259,12 @@ section:nth-child(odd) h2::before {
 
 #hill-two {
     visibility: hidden;
-    cx: 45vw; 
+    cx: 40vw; 
     cy: 90vh;
 }
 
 #hill-three {
-    cx: 65vw; 
+    cx: 60vw; 
     cy: 90vh;
 }
   
@@ -268,12 +273,16 @@ section:nth-child(odd) h2::before {
 .project-list {
     display: flex;
     flex-flow: column;
-    align-items: center;
+    align-items: stretch;
     margin: 5vh 10vw;
     background-color: var(--primary-color-lightest);
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .divider {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
     border-top: 1px dashed var(--primary-color-darkest);
 }
 
