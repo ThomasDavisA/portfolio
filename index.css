@@ -45,7 +45,6 @@ img {
 
 footer {
     padding: 1% 0;
-    background-color: #aaa;
     display: flex;
     flex-flow: row;
 }
@@ -53,6 +52,10 @@ footer {
 footer > a > i {
     font-size: 1.5rem;
     padding: 10px 20px;
+}
+
+footer, nav {
+    background-color: rgb(136, 207, 255);
 }
 
 
@@ -68,7 +71,6 @@ nav {
     top: 0;
     left: 0;
     z-index: 10;
-    background-color: #aaa;
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -90,7 +92,7 @@ li {
     transition: background-color .5s;
 }
 
-li:hover {
+nav li:hover {
     background-color: #99aaf0;
 }
 
@@ -102,7 +104,7 @@ a {
     transition: color .3s;
 }
 
-div > a:hover {
+a:hover {
     color: rgb(116, 116, 117);
 }
 
@@ -200,6 +202,24 @@ header {
     line-height: 100vh;
 }
 
+#bio-box > ul {
+    padding: 5vh 10vw;
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+}
+
+.game-text {
+    display: inline;
+    font-size: .75rem;
+    padding: 0 10px;
+}
+
+#bio-box > p {
+    padding: 5vh 10vw;
+    line-height: 3rem;
+}
+
 /* SVG elements styling */
 /* Create hills and butterflies and fireflies using base svg elements */
 
@@ -259,7 +279,7 @@ header {
 }
 
 .project-list > .divider {
-    border-top: 3px dashed black;
+    border-top: 1px dashed black;
 }
 
 h3 {
@@ -362,6 +382,10 @@ i + span {
         cy: 90vh;
     }
 
+    .game-text {
+        font-size: 1rem;
+    }
+
   }
 
 @media screen and (min-width: 1024px) {
@@ -387,6 +411,14 @@ i + span {
 
     .stackicons > i {
         font-size: 2.5rem;
+    }
+
+    #bio-box > ul {
+        padding: 5vh 20vw;
+    }
+    
+    #bio-box > p {
+        padding: 5vh 20vw;
     }
 }
 
