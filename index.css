@@ -7,23 +7,57 @@
 }
 
 :root {
-    --day-color-background: rgb(178, 205, 211);
-    --night-color-background: rgb(32, 21, 37);
+
+    /* Pallete Declarations
+    * We are going for Blue/Purple/Green.
+    */
+
+    --primary-color: #3E839D;
+    --primary-color-lighter: #65A4BC;
+    --primary-color-lightest: #99C9DB;
+    --primary-color-darker: #28728F;
+    --primary-color-darkest: #135B76;
+
+    --secondary-color1: #4D5CAB;
+    --secondary-color1-lighter: #727FC6;
+    --secondary-color1-lightest: #A2ACE0;
+    --secondary-color1-darker: #35459C;
+    --secondary-color1-darkest: #1F2E81;
+
+    --secontdary-color2: #43B66E;
+    --secontdary-color2-lighter: #6ACE8F;
+    --secontdary-color2-lightest: #9CE4B7;
+    --secontdary-color2-darker: #29A557;
+    --secontdary-color2-darkest: #12893E;
 }
 
 html {
+    font-size: 16px;
     scroll-behavior: smooth;
 }
   
 /* Base and Generic Elements */
 
 body {
-    font-family: "Oxygen", sans-serif; 
-    font-size: 16px;
-    color: #444;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0; 
+    line-height: 2rem;
+    color: var(--secondary-color1-darkest);
+    background: var(--primary-color-lighter);
+}
+
+p {
+    text-align: left;
+    padding: 20px 5vw;
+}
+
+span {
+    font-size: .75rem;
+    margin: 0 auto;
     text-align: center;
-    line-height: 1.6rem;
-    background: rgb(178, 205, 211);
+
 }
 
 img {
@@ -34,28 +68,48 @@ img {
     border: 3px solid lightblue;
 }
 
-.container {
-    margin: 5px auto;
-    height: 100%;
+ul {
+    display: flex;
+    justify-content: space-around;
 }
 
-.block-section {
-    min-height: 90vh;
+li {
+    margin: 0 2vw;
+    list-style: none;
+    transition: background-color .5s;
 }
 
 footer {
-    padding: 1% 0;
+    padding: .5rem 0;
     display: flex;
-    flex-flow: row;
-}
-
-footer > a > i {
-    font-size: 1.5rem;
-    padding: 10px 20px;
+    flex-flow: row nowrap;
 }
 
 footer, nav {
-    background-color: rgb(136, 207, 255);
+    width: 100%;
+    background-color: var(--secondary-color1-lightest);
+}
+
+a {
+    font-family: 'Martel Sans', sans-serif;
+    text-decoration: none;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-color1-darkest);
+    transition: color .3s;
+}
+
+a:hover {
+    color: var(--secondary-color1-lighter);
+}
+
+/* Icon Styling */
+
+i {
+    font-size: 1.5rem;
+    padding: 10px;
 }
 
 
@@ -63,49 +117,28 @@ footer, nav {
   
 nav {
     position: fixed;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
     top: 0;
-    left: 0;
     z-index: 10;
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
+/* For night mode -- CURRENTLY DISABLED */
 .night-mode-bar {
-    align-self: center;
     display: none;
 }
+/* Night mode end */
 
-ul {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
-li {
-    font-family: 'Martel Sans', sans-serif;
-    list-style: none;
-    padding: 10px 20px;
-    transition: background-color .5s;
+nav li {
+    padding: 5px 30px;
+    margin: 0;
 }
 
 nav li:hover {
-    background-color: #99aaf0;
+    background-color: var(--secondary-color1);
 }
 
-a {
-    text-decoration: none;
-    color: #262626;
-    display: flex;
-    flex-flow: column;
-    transition: color .3s;
-}
-
-a:hover {
-    color: rgb(116, 116, 117);
+nav a:hover {
+    color: var(--primary-color-lightest);
 }
 
 /* Main body Styling */
@@ -117,34 +150,17 @@ a:hover {
 .block {
     position: relative;
     margin-top: 5vh;
-    background: linear-gradient(175deg, rgb(234, 241, 243) 0%, rgba(178, 205, 211,1) 75%);
+    background: linear-gradient(175deg, var(--primary-color-lightest) 0%, var(--primary-color-lighter) 75%);
+}
+
+header {
+    height: 100vh;
 }
 
 .center-screen {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.frame-left {
-    position: absolute;
-    border-radius: 50px;
-    border-top: 10px solid white;
-    border-left: 10px solid white;
-    height: 80vh;
-    width: 85vw;
-    z-index: 1;
-}
-
-.frame-right {
-    position: absolute;
-    overflow: hidden;
-    border-radius: 50px;
-    border-bottom: 10px solid white;
-    border-right: 10px solid white;
-    height: 80vh;
-    width: 85vw;
-    z-index: 3;
 }
 
 .frame-center {
@@ -159,8 +175,7 @@ a:hover {
 h1 {
     font-family: 'Martel Sans', sans-serif;
     font-weight: 600;
-    padding: 10vh 0;
-    width: 100%;
+    padding: 10vh 5vh;
 }
 
 h1 + p {
@@ -169,55 +184,43 @@ h1 + p {
 
 
 /* Header Styling */
-/* This creates our blue triangles for each header.  Changes direction each even one! */
+/* This creates our triangles for each header.  Changes direction each even one! */
 
 h2 {
     font-family: 'Martel Sans', sans-serif;
-    position: relative;
-    z-index: 1;
-    padding: 5vh 0;
-    padding-top: 20vh;
+    padding-top: 10vh;
+    text-align: center;
 }
 
 h2::before {
     position: absolute;
-    display: block;
     content: '';
     left: 0;
     border-width: 20px 40vw;
     border-style: solid;
-    border-color: rgba(0,0,0,0) rgba(0,0,0,0) rgb(111, 217, 247) rgb(111, 217, 247);
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0) var(--secontdary-color2-lighter) var(--secontdary-color2-lighter);
     z-index: -1;
 }
 
 section:nth-child(odd) h2::before {
     left: 19%;
     right: 0;
-    border-color: rgba(0,0,0,0) rgb(111, 217, 247) rgb(111, 217, 247) rgba(0,0,0,0);
-}
-
-
-header {
-    height: 100vh;
-    line-height: 100vh;
+    border-color: rgba(0,0,0,0) var(--secontdary-color2-lighter) var(--secontdary-color2-lighter) rgba(0,0,0,0);
 }
 
 #bio-box > ul {
-    padding: 5vh 10vw;
     display: flex;
     flex-flow: column;
-    text-align: left;
+    margin: 5vh 5vw;
+}
+
+#bio-box ul li {
+    padding-left: 5vw;
 }
 
 .game-text {
-    display: inline;
     font-size: .75rem;
     padding: 0 10px;
-}
-
-#bio-box > p {
-    padding: 5vh 10vw;
-    line-height: 3rem;
 }
 
 /* SVG elements styling */
@@ -229,23 +232,17 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 84vw;
-    height: 100vh;
+    height: 90vh;
+}
+
+#hill-container {
+    position: absolute;
 }
 
 .hill {
-    rx: 25vw;
-    ry: 15vh;
+    rx: 40vw;
+    ry: 10vh;
     z-index: 2;
-    stroke: linear-gradient(305deg, rgba(58,98,107,0) 20%, rgba(77,167,97,1) 80%, rgba(218,245,209,1) 100%);
-    --color-light-1: #daf5d1;
-    --color-light-2: #4da761;
-    --color-light-3: #3a626b;
-
-    /* For night mode
-    --color-dark-1:
-    --color-dark-2:
-    --color-dark-3:
-    */
 
     fill: url(#hill-day-gradient);
 }
@@ -272,50 +269,30 @@ header {
     display: flex;
     flex-flow: column;
     align-items: center;
-    padding: 0 1vw;
-    margin: 10px 10vw;
-    background-color: rgb(206, 227, 241);
-    border-radius: 2px;
+    margin: 5vh 10vw;
+    background-color: var(--primary-color-lightest);
 }
 
-.project-list > .divider {
-    border-top: 1px dashed black;
+.divider {
+    border-top: 1px dashed var(--primary-color-darkest);
 }
 
-h3 {
-    font-family: 'Martel Sans', sans-serif;
-    margin: 0 20px;
-}
-
-p {
-    text-align: left;
-    padding: 20px 5vw;
-    font-weight: 300;
-}
-
-.links {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-around;
+.container {
+    margin: 5vh 5vw;
+    text-align: center;
 }
 
 .stackicons > i {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
-/* Icon Styling */
+/* Contact links */
 
-i {
-    display: block;
-    font-size: 2rem;
-    padding: 5px;
+#contact-box ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
 }
-
-i + span {
-    visibility: hidden;
-}
-
 
   /* Media queries */
   /* Tablet - PC */
@@ -323,47 +300,25 @@ i + span {
 
 @media screen and (min-width: 768px) {
 
-    body {
+    html {
         font-size: 20px;
-        line-height: 2rem;
     }
     
-    h2 {
-        padding-top: 15vh;
+    body {
+        line-height: 2.5rem;
     }
 
     ul {
         justify-content: flex-end;
     }
 
-    img {
-        max-height: none;
-        max-width: 15vw;
-        margin: 0 20px;
-    }
-
-    .project-list {
-        display: flex;
-        flex-flow: row;
-        align-items: center;
-    }
-
     .project-list > .divider {
-        border-top: none;
-        border-left: 3px dashed black;
-    }
-
-    .container {
-        margin: 20px auto;
-    }
-
-    i + span {
-        visibility: visible;
+        border-top: 2px dashed var(--primary-color-darkest);
     }
 
     .hill {
         rx: 20vw;
-        ry: 17vh;
+        ry: 12vh;
     }
     
     #hill-one {
@@ -382,21 +337,12 @@ i + span {
         cy: 90vh;
     }
 
-    .game-text {
-        font-size: 1rem;
-    }
-
   }
 
 @media screen and (min-width: 1024px) {
 
-    body {
+    html {
         font-size: 24px;
-        line-height: 2.6rem;
-    }
-
-    i {
-        font-size: 3rem;
     }
 
     footer > a > i {
@@ -404,21 +350,24 @@ i + span {
         margin: 0 10px;
     }
 
+    img {
+        max-height: none;
+        max-width: 15vw;
+    }
+
+    .project-list {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .project-list > .divider {
+        border-top: none;
+        border-left: 2px dashed var(--primary-color-darkest);
+    }
+
     .hill {
         rx: 20vw;
-        ry: 20vh;
-    }
-
-    .stackicons > i {
-        font-size: 2.5rem;
-    }
-
-    #bio-box > ul {
-        padding: 5vh 20vw;
-    }
-    
-    #bio-box > p {
-        padding: 5vh 20vw;
+        ry: 14vh;
     }
 }
 
