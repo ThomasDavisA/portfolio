@@ -74,11 +74,13 @@ nav {
 
 .night-mode-bar {
     align-self: center;
+    display: none;
 }
 
 ul {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+    width: 100%;
 }
 
 li {
@@ -278,6 +280,10 @@ p {
     justify-content: space-around;
 }
 
+.stackicons > i {
+    font-size: 1.5rem;
+}
+
 /* Icon Styling */
 
 i {
@@ -304,6 +310,10 @@ i + span {
     
     h2 {
         padding-top: 15vh;
+    }
+
+    ul {
+        justify-content: flex-end;
     }
 
     img {
@@ -373,6 +383,10 @@ i + span {
     .hill {
         rx: 20vw;
         ry: 20vh;
+    }
+
+    .stackicons > i {
+        font-size: 2.5rem;
     }
 }
 
