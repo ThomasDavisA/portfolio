@@ -245,6 +245,8 @@ section:nth-child(odd) h2::before {
 }
 
 .hill {
+    rx: 30vw;
+    ry: 10vh;
     z-index: 2;
 
     fill: url(#hill-day-gradient);
