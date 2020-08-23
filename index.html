@@ -7,13 +7,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Oxygen:wght@300;400;700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://kit.fontawesome.com/dc8d284b34.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <nav>
-        <div class="night-mode-bar"><i class="fas fa-sun light-mode"></i><i class="fas fa-moon dark-mode"></i></div>
         <ul>
             <li><a href="#bio-box">About</a></li>
             <li><a href="#project-box">Projects</a></li>
@@ -22,24 +22,9 @@
     </nav>
     <main>
         <header class="block block-section">
-            <svg id="splash-screen">
-
-                <defs>
-                    <linearGradient id="hill-day-gradient" x1="0%" y1="0%" x2="15%" y2="100%">
-                        <stop offset="0%" style="stop-color:#9CE4B7;stop-opacity:1" />
-                        <stop offset="40%" style="stop-color:#43B66E;stop-opacity:.9" />
-                        <stop offset="60%" style="stop-color:#12893E;stop-opacity:0" />
-                    </linearGradient>
-                </defs>
-
-                <ellipse class="hill" id="hill-one" rx="30vw" ry="10vh" fill="url(#hill-day-gradient)" />
-                <ellipse class="hill" id="hill-two" rx="30vw" ry="10vh" />
-                <ellipse class="hill" id="hill-three" rx="30vw" ry="10vh" />
-            </svg>
-
             <div class="frame-center center-screen">
-                <h1>Thomas Davis</h1>
-                <p>Bringing creative ideas to life.</p>
+                <h1 class='title-fade'>Thomas Davis</h1>
+                <h3 class='title-fade-two'>Software Developer</h3>
             </div>
         </header>
 
@@ -48,21 +33,103 @@
 
             <h3>Who I am:</h3>
             <ul>
-                <li>Avid about games<span class="game-text">(Yes, any kind.)</span>
+                <li>Avid about games<span class="game-text">of video and boards</span>
                 </li>
-                <li>A web developer, focused on the frontend</li>
-                <li>Artist on the side</li>
+                <li>A web developer, with a passion on the frontend</li>
+                <li>A little art on the side</li>
                 <li>And a cat person.</li>
             </ul>
 
             <p>
-                My current focus is on Javascript programming. I enjoy competing in life. This extends to
+                My current focus is developing React programs. I enjoy competing in life. This extends to
                 collaborating with others to create new and interesting tools and games.
             </p>
         </section>
 
         <section class="block-section" id="project-box">
             <h2>Projects</h2>
+
+            <div class="project-list">
+                <div class="container">
+                    <img class="project-img"
+                        src="./cursr-picture.png"
+                        alt="The dashboard.  A user can view how many curses they have blessed here.">
+                    <h3>Cursr</h3>
+                    <div class="stackicons">
+                        <i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i><i class="fab fa-js"></i><i
+                        class="fab fa-react"></i><i class="fab fa-node-js"></i>
+                    </div>
+                </div>
+                <div class="divider">
+                    <p>
+                        Cursr is a 'vent' app, meant to be used when a user is angry.  I lead a team of developers in designing and implementing this simple yet powerful app, letting users curse into a void, where others will get to read these messages and send back a 'blessing', all of it completely anonymous.  I largely handled styling and product management, keeping the team on task and on track in our three week period together.  
+                    </p>
+                    <ul>
+                        <li><a href="https://capstone-3-oabkt.vercel.app/"><i class="fas fa-link"></i>Live
+                                Link</a></li>
+                        <li><a href="hhttps://github.com/thinkful-ei-macaw/Capstone-3-OABKT---Client"><i
+                                    class="fab fa-github"></i>Client Code</a></li>
+                        <li><a href="https://github.com/thinkful-ei-orka/Capstone-3-O-K-A-B-T-Server"><i
+                                    class="fab fa-github"></i>Server Code</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-list">
+                <div class="container">
+                    <img class="project-img" src="./speak-easy.png"
+                        alt="Quizzing upon a word.  A user can use the microphone button to speak the word instead of just typing it in.">
+                    <h3>SpeakEasy</h3>
+                    <div class="stackicons">
+                        <i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i><i class="fab fa-js"></i><i
+                        class="fab fa-react"></i><i class="fab fa-node-js"></i>
+                    </div>
+                </div>
+                <div class="divider">
+                    <p>
+                        Trying to learn a new language?  This spaced repitition app was developed with me and two others using React and Node, while handling new data structures.  We were able to get voice functionality as well as multiple choice questions put into the App, all the while giving it a very calm and easy style for people to feel comfortable with.
+                    </p>
+                    <ul>
+                        <li><a href="https://speak-easy-lake.vercel.app/"><i class="fas fa-link"></i>Live
+                                Link</a></li>
+                        <li><a href="https://github.com/thinkful-ei-orka/spaced-repetition-api-Carlo-Thomas-Jacob"><i
+                                    class="fab fa-github"></i>Client Code</a></li>
+                        <li><a href="https://github.com/thinkful-ei-orka/spaced-repetition-Carlo-Jacob-Thomas"><i
+                                    class="fab fa-github"></i>Server Code</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-list">
+                <div class="container">
+                    <img class="project-img"
+                        src="https://camo.githubusercontent.com/0a225c1213175c36fd08c9ee1a881947a1709de2/68747470733a2f2f692e696d6775722e636f6d2f4b58426c3345722e706e67"
+                        alt="Gameplay picture of Kobold Adventure.  The player is in the middle of an adventure.">
+                    <h3>Kobold Adventures</h3>
+                    <div class="stackicons">
+                        <i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i><i class="fab fa-js"></i><i
+                            class="fab fa-react"></i><i class="fab fa-node-js"></i>
+                    </div>
+                </div>
+                <div class="divider">
+                    <p>
+                        Time for adventure! Kobold Adventures is a full-stack application I made for my first capstone
+                        app at Thinkful. This game was created for bite-sized text adventures for people on the go, with
+                        each adventure only taking 2-3 minutes total. The technical challenges were significant, but I
+                        was able to combine all of my skills up to this point to create a program that works and can be
+                        played.
+                    </p>
+                    <ul>
+                        <li><a href="https://kobold-adventures.thomasdavisa.vercel.app/"><i class="fas fa-link"></i>Live
+                                Link</a></li>
+                        <li><a href="https://github.com/ThomasDavisA/kobold-adventures-client"><i
+                                    class="fab fa-github"></i>Client Code</a></li>
+                        <li><a href="https://github.com/ThomasDavisA/kobold-adventures-server"><i
+                                    class="fab fa-github"></i>Server Code</a></li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="project-list">
                 <div class="container">
                     <img class="project-img" src="./kobold-cave-portfolio.png"
@@ -73,12 +140,13 @@
                     </div>
                 </div>
                 <div class="divider">
-                    <p>Wake the dragon! An incremental game I made before joining the Thinkful
-                        bootcamp, using vanilla JS/HTML/CSS. Kobold Cave is a game where you manage kobolds to make a
-                        platinum coin. Made for people who enjoyed playing casual games, Kobold Cave
-                        blossomed into rudimentary AI for the kobolds. Perfect for learning and to just spend an hour
-                        on, I learned how to handle many objects
-                        and fundamental logic with Kobold Cave, and it is in continual development.</p>
+                    <p>
+                        Wake the dragon! An incremental game I made before joining the Thinkful immersion program, using
+                        JavaScript, HTML5, and CSS3. Kobold Cave is a game where you manage kobolds to make a platinum
+                        coin. Made for people who enjoyed playing casual games, Kobold Cave blossomed into rudimentary
+                        AI for the kobolds. Perfect for learning and to just spend an hour on, I learned how to handle
+                        many objects and fundamental logic with Kobold Cave.
+                    </p>
                     <ul>
                         <li><a href="https://thomasdavisa.github.io/kobold-game/"><i class="fas fa-link"></i>Live
                                 Link</a></li>
