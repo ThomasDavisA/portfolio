@@ -185,6 +185,20 @@ h1 {
     font-weight: 200;
 }
 
+@keyframes fadeInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+}
+    
+.fadeInDown-animation {
+      animation: 1.5s fadeInDown;
+}
 
 /* Header Styling */
 /* This creates our triangles for each header.  Changes direction each even one! */
